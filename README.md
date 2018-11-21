@@ -7,6 +7,8 @@ I am planning to prepare a kind of multi-target filtering library which includes
 3. Stochastic populations-based filter such as Hypothesized and Independent Stochastic Population (HISP) filter, etc.
 4. Multiple target, multiple type filtering algorithm such as N-type PHD filter, etc
 
-I will also include single target filtering in different implementation schemes for a quick start such as Kalman filter (KF), extended Kalman filter (EKF), uncented Kalman filter (UKF) and particle filter (PF).
+Different implementation schemes such as Kalman filter (KF), extended Kalman filter (EKF), uncented Kalman filter (UKF) and  sequential Monte Carlo (SMC) or particle filter (PF) of these multi-target filtering algorithms will be included. 
+
+Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF will also included.
 
 The codes will be uploaded soon!
