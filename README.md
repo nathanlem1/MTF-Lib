@@ -9,6 +9,6 @@ I am planning to prepare a kind of multi-target filtering library which includes
 
 Different implementation schemes such as Kalman filter (KF), extended Kalman filter (EKF), uncented Kalman filter (UKF) and  sequential Monte Carlo (SMC) or particle filter (PF) of these multi-target filtering algorithms will be included. 
 
-Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF will also included.
+Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF will also be included.
 
 The codes will be uploaded soon!
