@@ -12,7 +12,7 @@ model.A0= [ 1 model.T; 0 1 ];
 model.F= [ model.A0 zeros(2,2); zeros(2,2) model.A0 ]; %transition matrix  
 model.B0= [ (model.T^2)/2; model.T ];
 model.B= [ model.B0 zeros(2,1); zeros(2,1) model.B0 ]; %process noise standard deviation
-model.sigma_v = 1.5;
+model.sigma_v = 2.5;
 model.Q= (model.sigma_v)^2* model.B*model.B';   %process noise covariance
 
 % observation model parameters (noisy x/y only)
@@ -56,13 +56,23 @@ for k = 1:N_duration
     estimated_X{k} = m_update;
     
     %Plot the ground truth
-    plot(truth_X{k}(1), truth_X{k}(3), '.-r', 'LineWidth', 2);
+    h1 = plot(truth_X{k}(1), truth_X{k}(3), '.r', 'LineWidth', 2);
     %Plot the measurement
-    plot(meas_Z{k}(1), meas_Z{k}(2), '.-b', 'LineWidth', 2);
+    h2 = plot(meas_Z{k}(1), meas_Z{k}(2), '+b', 'LineWidth', 2);
     %Plot the estimated state
-    plot(estimated_X{k}(1), estimated_X{k}(3), '.-g', 'LineWidth', 2);
-    
+    h3 = plot(estimated_X{k}(1), estimated_X{k}(3), '.g', 'LineWidth', 2);
+    xlabel('X coordinate');
+    ylabel('Y coordinate');
+    legend([h1, h2, h3], 'ground truth', 'measurement', 'estimated state')
+    axis square;  
 end
+
+
+
+
+
+
+
 
 
 
