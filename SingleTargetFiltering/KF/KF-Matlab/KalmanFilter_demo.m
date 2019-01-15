@@ -1,4 +1,11 @@
 % This script runs KF example
+%
+% Version 1.0, January, 2019
+%
+% This function was written by Nathanael L. Baisa
+% email: nathanaellmss@gmail.com
+%
+%
 % State vector is position x,y and velcity vx, vy i.e. [x, vx, y,vy] and 
 % observation vector is position x, y i.e. [x, y]
 
