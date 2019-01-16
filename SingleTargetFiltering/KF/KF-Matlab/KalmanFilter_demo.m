@@ -6,7 +6,7 @@
 % email: nathanaellmss@gmail.com
 %
 %
-% State vector is position x,y and velcity vx, vy i.e. [x, vx, y,vy] and 
+% State vector is position x,y and velocity vx, vy i.e. [x, vx, y,vy] and 
 % observation vector is position x, y i.e. [x, y]
 
 clc;
