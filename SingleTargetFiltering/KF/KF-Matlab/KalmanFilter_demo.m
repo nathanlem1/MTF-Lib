@@ -49,15 +49,19 @@ estimated_X = cell(N_duration,1);
 figure(1), hold on;
 
 for k = 1:N_duration
+    
+    % simulate dynamic target state
     %targetstate = model.F * targetstate + sqrt(model.Q)*randn(4,1); % generate ground truth for states of a target
     W = model.sigma_v*model.B*randn(size(model.B,2),size(targetstate,2)); % equivalent to 'sqrt(model.Q)*randn(4,1)'
     targetstate = model.F * targetstate + W;  % generate ground truth for states of a target
     truth_X{k}= targetstate;
     
+    % simulate target measurement
     %meas_Z{k}= model.H*targetstate + sqrt(model.R)*randn(size(model.R,2),1); % generate measurement of a target
     V = model.D*randn(size(model.D,2),size(targetstate,2)); % equivalent to 'sqrt(model.R)*randn(size(model.R,2),1)'
     meas_Z{k}= model.H*targetstate + V; % generate measurement of a target
     
+    % Call KalmanFilter function
     [m_update, P_update] = KalmanFilter(meas_Z{k}, model, m_update, P_update);
     
     estimated_X{k} = m_update;
@@ -73,6 +77,11 @@ for k = 1:N_duration
     legend([h1, h2, h3], 'ground truth', 'measurement', 'estimated state')
     axis square;  
 end
+
+
+
+
+
 
 
 
