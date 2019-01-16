@@ -10,7 +10,6 @@
 # [x, y]
 
 
-
 from __future__ import division, print_function, unicode_literals  # To support both python 2 and python 3
 import numpy as np
 import matplotlib.pyplot as plt
