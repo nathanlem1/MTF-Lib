@@ -51,7 +51,7 @@ figure(1), hold on;
 for k = 1:N_duration
     
     % simulate dynamic target state
-    %targetstate = model.F * targetstate + sqrt(model.Q)*randn(4,1); % generate ground truth for states of a target
+    %targetstate = model.F * targetstate + sqrt(model.Q)*randn(size(targetstate)); % generate ground truth for states of a target
     W = model.sigma_v*model.B*randn(size(model.B,2),size(targetstate,2)); % equivalent to 'sqrt(model.Q)*randn(4,1)'
     targetstate = model.F * targetstate + W;  % generate ground truth for states of a target
     truth_X{k}= targetstate;
