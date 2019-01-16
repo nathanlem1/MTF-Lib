@@ -1,5 +1,5 @@
 % This function implements Kalman filter (KF) in a clear and understandable
-% manner. The tutorial for the KF is geiven in the following papers:
+% manner. The tutorial for the KF is given in the following papers:
 % 1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
 % 2. M.S.Arulampalam, S.Maskel, N. Gordon and T Clapp, 'A Tutorial on 
 % Particle Filters for Online Nonlinear/Non-Gaussian Bayesian Tracking'.
@@ -7,12 +7,12 @@
 % The state dynamics evolves according to the following equations:
 % x(k) = f(k)(x(k-1), u(k), w(k-1)) = F(k)x(k-1) + G(k)u(k) + w(k-1)
 %                  f(k)(.) is a linear (in KF case) or non-linear) function.
-%                  meaning the state vector x evolves during one time
-%                  step premultiplying by the state transition
+%                  Meaning the state vector x evolves during one time
+%                  step pre-multiplying by the state transition
 %                  matrix F. There is optionally (if nonzero) an input
 %                  (control) vector u which affects the state linearly, 
 %                  and this linear effect on the state is represented 
-%                  premultiplying by the input matrix G. There is also
+%                  pre-multiplying by the input matrix G. There is also
 %                  gaussian process noise w. In our case, we set u to 0.
 % where w ~ N(0,Q(k-1)) meaning w(k-1) is gaussian noise with mean zero and
 %                       covariance Q(k-1)
@@ -21,7 +21,7 @@
 %                  h(k)(.) is a linear (in KF case) or non-linear) function.
 %                  Meaning the observation vector z is a linear function
 %                  of the state vector, and this linear relationship is
-%                  represented by premultiplication of observation
+%                  represented by pre-multiplication of observation
 %                  matrix H. There is also gaussian measurement
 %                  noise v.
 % where v ~ N(0,R(k)) meaning v(k) is gaussian noise with mean zero and
