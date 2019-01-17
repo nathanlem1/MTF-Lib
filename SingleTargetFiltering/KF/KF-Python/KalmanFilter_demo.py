@@ -45,11 +45,11 @@ class KF_demo(object):
         print(self.model["R"])
 
         # Birth parameters
-        self.m_birth = np.array([[10],  [0],  [-10],  [0]])  # mean of Gaussian birth term
+        self.m_birth = np.array([[5],  [0],  [-5],  [0]])  # mean of Gaussian birth term
         self.B_birth = np.diag([10, 10, 10, 10])  # std of Gaussian birth term
         self.P_birth = self.B_birth.dot(np.transpose(self.B_birth))  # cov of Gaussian birth term
 
-        self.xstart = self.m_birth
+        self.xstart = np.array([[20],  [0],  [10],  [-10]]) 
         self.targetstate = self.xstart
 
         self.N_duration = 100 # length of data / number of scans
