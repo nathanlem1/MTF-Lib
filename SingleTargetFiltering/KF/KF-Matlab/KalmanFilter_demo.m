@@ -28,11 +28,11 @@ model.D= diag([ 10; 10 ]);         %observation noise standard deviation
 model.R= model.D*model.D';         %observation noise covariance
 
 % Birth parameters 
-m_birth = [ 10; 0; -10; 0 ];   %mean of Gaussian birth term 
+m_birth = [ 5; 0; -5; 0 ];   %mean of Gaussian birth term 
 B_birth = diag([ 10; 10; 10; 10 ]); %std of Gaussian birth term
 P_birth = B_birth*B_birth';  %cov of Gaussian birth term
 
-xstart  = m_birth; %[ 0; 0; 0; -10 ]; 
+xstart  = [ 20; 0; 10; -10 ]; 
 targetstate = xstart;
 
 N_duration = 100; %length of data/number of scans
