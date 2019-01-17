@@ -17,7 +17,7 @@
 % where w ~ N(0,Q(k-1)) meaning w(k-1) is gaussian noise with mean zero and
 %                       covariance Q(k-1)
 % The observation model is given by:
-% z(k) = h(k)(x(k),V(k0) = H(k)x(k) + v(k)
+% z(k) = h(k)(x(k),v(k) = H(k)x(k) + v(k)
 %                  h(k)(.) is a linear (in KF case) or non-linear) function.
 %                  Meaning the observation vector z is a linear function
 %                  of the state vector, and this linear relationship is
