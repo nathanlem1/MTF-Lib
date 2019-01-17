@@ -13,7 +13,7 @@ clc;
 clear;
 close all;
 
-% dynamical model parameters (CV model)
+% dynamical model parameters (constant velocity (CV) model)
 model.T= 1;                                           %sampling period
 model.A0= [ 1 model.T; 0 1 ];                                            
 model.F= [ model.A0 zeros(2,2); zeros(2,2) model.A0 ]; %transition matrix  
