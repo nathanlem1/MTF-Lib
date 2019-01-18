@@ -3,7 +3,7 @@
 % 1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
 %
 % The state dynamics evolves according to the following equations:
-% x(k) = f(k)(x(k-1), u(k), w(k-1)) = F(k)x(k-1) + G(k)u(k) + w(k-1)
+% x(k) = f(k)(x(k-1), u(k-1), w(k-1)) = F(k)x(k-1) + G(k)u(k) + w(k-1)
 %                  f(k)(.) is a linear (in KF case) or non-linear function.
 %                  Meaning the state vector x evolves during one time
 %                  step pre-multiplying by the state transition
