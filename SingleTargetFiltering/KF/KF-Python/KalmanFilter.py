@@ -1,8 +1,6 @@
 #  This function implements Kalman filter (KF) in a clear and understandable  manner. The tutorial for the KF is given
 #  in the following papers:
 #  1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
-#  2. M.S.Arulampalam, S.Maskel, N. Gordon and T Clapp, 'A Tutorial on Particle Filters for Online Nonlinear/
-#  Non-Gaussian  Bayesian Tracking'.
 #
 #  The state dynamics evolves according to the following equations:
 #  x(k) = f(k)(x(k-1), u(k), w(k-1)) = F(k)x(k-1) + G(k)u(k) + w(k-1)
