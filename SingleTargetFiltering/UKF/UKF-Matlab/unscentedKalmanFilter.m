@@ -1,7 +1,10 @@
 % This function implements unscented Kalman filter (UKF) in a clear and 
-% understandable manner. The tutorial for the UKF is geiven in the following 
-% papers:
+% understandable manner. The tutorial for the UKF is given in the paper
+% [1]. A nearly-constant turn (CT) model used in [2] is used in this 
+% implementation.
 % 1. E.A. Wan and R. Van Der Merwe, 'The unscented Kalman filter for nonlinear estimation'
+% 2. Ba-Ngu Vo, and Wing-Kin Ma, 'The Gaussian Mixture Probability Hypothesis
+% Density Filter'
 %
 % The state dynamics evolves according to the following equations:
 % x(k) = f(k)(x(k-1), u(k-1), w(k-1)) = f(k)(x(k-1), w(k-1)) [assume u(k-1) =0] 
