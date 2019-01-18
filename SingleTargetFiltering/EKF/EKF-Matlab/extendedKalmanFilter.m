@@ -1,7 +1,10 @@
 % This function implements extended Kalman filter (EKF) in a clear and 
-% understandable manner. The tutorial for the EKF is geiven in the following 
-% papers:
+% understandable manner. TThe tutorial for the EKF is given in the paper
+% [1]. A nearly-constant turn (CT) model used in [2] is used in this 
+% implementation.
 % 1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
+% 2. Ba-Ngu Vo, and Wing-Kin Ma, 'The Gaussian Mixture Probability Hypothesis
+% Density Filter'
 %
 % The state dynamics evolves according to the following equations:
 % x(k) = f(k)(x(k-1), u(k-1), w(k-1)) = f(k)(x(k-1), w(k-1)) [assume u(k-1) =0] 
