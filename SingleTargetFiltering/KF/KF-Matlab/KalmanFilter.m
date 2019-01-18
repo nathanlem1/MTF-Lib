@@ -1,12 +1,10 @@
 % This function implements Kalman filter (KF) in a clear and understandable
 % manner. The tutorial for the KF is given in the following papers:
 % 1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
-% 2. M.S.Arulampalam, S.Maskel, N. Gordon and T Clapp, 'A Tutorial on 
-% Particle Filters for Online Nonlinear/Non-Gaussian Bayesian Tracking'.
 %
 % The state dynamics evolves according to the following equations:
 % x(k) = f(k)(x(k-1), u(k), w(k-1)) = F(k)x(k-1) + G(k)u(k) + w(k-1)
-%                  f(k)(.) is a linear (in KF case) or non-linear) function.
+%                  f(k)(.) is a linear (in KF case) or non-linear function.
 %                  Meaning the state vector x evolves during one time
 %                  step pre-multiplying by the state transition
 %                  matrix F. There is optionally (if nonzero) an input
@@ -18,7 +16,7 @@
 %                       covariance Q(k-1)
 % The observation model is given by:
 % z(k) = h(k)(x(k),v(k) = H(k)x(k) + v(k)
-%                  h(k)(.) is a linear (in KF case) or non-linear) function.
+%                  h(k)(.) is a linear (in KF case) or non-linear function.
 %                  Meaning the observation vector z is a linear function
 %                  of the state vector, and this linear relationship is
 %                  represented by pre-multiplication of observation
