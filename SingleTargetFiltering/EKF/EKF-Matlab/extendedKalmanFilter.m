@@ -1,5 +1,6 @@
-% This function implements Kalman filter (KF) in a clear and understandable
-% manner. The tutorial for the KF is geiven in the following papers:
+% This function implements extended Kalman filter (EKF) in a clear and 
+% understandable manner. The tutorial for the KF is geiven in the following 
+% papers:
 % 1. Greg Welch and Gary Bishop, 'An Introduction to the Kalman Filter'
 %
 % The state dynamics evolves according to the following equations:
