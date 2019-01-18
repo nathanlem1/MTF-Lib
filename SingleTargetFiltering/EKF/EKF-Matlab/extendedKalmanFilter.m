@@ -6,7 +6,7 @@
 % The state dynamics evolves according to the following equations:
 % x(k) = f(k)(x(k-1), u(k-1), w(k-1)) = f(k)(x(k-1), w(k-1)) [assume u(k-1) =0] 
 %                  f(k)(.) is a non-linear function. A local linear 
-%                  approximation around the current mean m(k?1) at each 
+%                  approximation around the current mean m(k-1) at each 
 %                  time should be used to get a Jacobian matrices F(k) 
 %                  (partial derivatives of f(k)(.) with respect to x) and 
 %                  W(k)(partial derivatives of f(k)(.) with respect to 
@@ -16,7 +16,7 @@
 % The observation model is given by:
 % z(k) = h(k)(x(k),v(k)
 %                  h(k)(.) is a non-linear function. A local linear 
-%                  approximation around the current mean m(k|k?1) at each 
+%                  approximation around the current mean m(k|k-1) at each 
 %                  time should be used to get a Jacobian matrices H(k) 
 %                  (partial derivatives of h(k)(.) with respect to x) and 
 %                  V(k)(partial derivatives of h(k)(.) with respect to 
