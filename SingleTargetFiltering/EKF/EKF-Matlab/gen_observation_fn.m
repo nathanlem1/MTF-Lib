@@ -1,6 +1,6 @@
 function Z= gen_observation_fn(model,X,W)
 
-%theta/range observation equation
+%theta(bearing)/range observation equation
 
 if ~isnumeric(W)
     if strcmp(W,'noise')
