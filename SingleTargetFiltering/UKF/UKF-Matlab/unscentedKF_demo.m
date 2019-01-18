@@ -44,7 +44,7 @@ m_birth = [ -100; 0; 250; 0; 0 ];   %mean of Gaussian birth term
 B_birth = diag([ 50; 50; 50; 50; 6*(pi/180) ]); %std of Gaussian birth term
 P_birth = B_birth*B_birth';  %cov of Gaussian birth term
 
-wturn = 2*pi/180;
+wturn = 2*pi/180; % turn rate
 xstart  = [ -150; 15; 250; -10; wturn/8 ];  
 targetstate = xstart;
 
