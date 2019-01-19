@@ -6,7 +6,7 @@
 % email: nathanaellmss@gmail.com
 %
 % State vector is position x,y and velcity vx, vy i.e. [x, vx, y, vy, w_turn] and 
-% observation vector is position (x, y) converted into (theta, range) = (arctan(x/y); sqrt(x^2 + y^2)) to (x,y) form.
+% observation vector is position (x, y) converted into (theta(bearing); range) = (arctan(x/y); sqrt(x^2 + y^2)) form.
 %
 
 clc;
