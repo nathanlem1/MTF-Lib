@@ -6,7 +6,7 @@
 % email: nathanaellmss@gmail.com
 %
 % State vector is position x,y and velcity vx, vy i.e. [x, vx, y, vy, w_turn] and 
-% observation vector is position (x, y) converted into (theta, range) = (arctan(x/y); sqrt(x^2 + y^2)) to (x,y) form.
+% observation vector is position (x, y) converted into (theta(bearing); range) = (arctan(x/y); sqrt(x^2 + y^2)) form.
 %
 
 clc;
@@ -72,7 +72,7 @@ for k = 1:N_duration
     meas_Z = [meas_Z meas_z];
     
     % Call uncented Kalman filter function
-    [m_update, P_update] = unscentedKalmanFilter(meas_z, model, m_update, P_update, ukf_alpha, ukf_kappa, ukf_beta);
+    [m_update, P_update] = unscentedKF(meas_z, model, m_update, P_update, ukf_alpha, ukf_kappa, ukf_beta);
    
     estimated_X = [estimated_X m_update];
     
@@ -91,6 +91,13 @@ for k = 1:N_duration
     drawnow; 
     
 end
+
+
+
+
+
+
+
 
 
 
