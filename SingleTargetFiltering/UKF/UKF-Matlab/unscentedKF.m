@@ -40,7 +40,7 @@
 %
 
 function [m_update, P_update] = unscentedKF(z, model, m_update, P_update, alpha, kappa, beta)
-    % Inputs are measurement (z), model (F, Q, H, R), and m_update and P_update 
+    % Inputs are measurement (z), model (Q, R, dimension of vectors), and m_update and P_update 
     % at time k-1.
     % Outputs are m_update and P_update at time k.
     
