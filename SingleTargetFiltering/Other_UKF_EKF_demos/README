@@ -1,0 +1,15 @@
+Unscented Kalman Filter (UKF) Demos
+-----------------------------------
+
+This archive contains two simple Matlab demonstrations on the use
+of the UKF for nonlinear estimation. 
+
+./demo1 : Contains a 2D tracking example. Run 'ukf_demo1' in Matlab.
+./demo2 : Contains a 1D nonlinear timeseries estiamtion example. Run
+          'ukf_demo2' in Matlab.
+	  
+./ukf   : contains the UKF code
+
+
+AUTHOR : Rudolph van der Merwe (rvdmerwe@ieee.org)
+DATE   : 25 May 2001
