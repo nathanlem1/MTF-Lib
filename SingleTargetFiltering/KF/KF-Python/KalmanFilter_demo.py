@@ -101,7 +101,7 @@ class KF_demo(object):
         estimated_X = np.array(estimated_X)
 
         # Plot the ground truth
-        plt.plot(truth_X[:, 0], truth_X[:, 2], '.r', label='ground truth')
+        plt.plot(truth_X[:, 0], truth_X[:, 2], '-r', label='ground truth')
         # Plot the measurement
         plt.plot(meas_Z[:, 0], meas_Z[:, 1], '.b', label='measurement')
         # Plot the estimated state
