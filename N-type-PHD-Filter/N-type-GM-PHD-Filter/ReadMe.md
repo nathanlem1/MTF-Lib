@@ -18,12 +18,16 @@ author = "Nathanael L. Baisa and Andrew Wallace",
 
 
 ```
-@ARTICLE{ekodirov_cvpr2017,
-   author = {Elyor Kodirov, Tao Xiang, and Shagong Gong},
-   title = "{Semantic Autoencoder for Zero-shot Learning}",
-   journal = {IEEE CVPR 2017},
-   year = 2017,
-   month = July
+@article{BAISA201949,
+title = "Multiple target, multiple type filtering in the RFS framework",
+journal = "Digital Signal Processing",
+volume = "89",
+pages = "49 - 59",
+year = "2019",
+issn = "1051-2004",
+doi = "https://doi.org/10.1016/j.dsp.2019.03.005",
+url = "http://www.sciencedirect.com/science/article/pii/S1051200418303166",
+author = "Nathanael L. Baisa and Andrew Wallace",
 }
 ```
 
