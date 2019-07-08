@@ -14,3 +14,16 @@ url = "http://www.sciencedirect.com/science/article/pii/S1051200418303166",
 author = "Nathanael L. Baisa and Andrew Wallace",
 }
 '''
+
+
+
+```
+@ARTICLE{ekodirov_cvpr2017,
+   author = {Elyor Kodirov, Tao Xiang, and Shagong Gong},
+   title = "{Semantic Autoencoder for Zero-shot Learning}",
+   journal = {IEEE CVPR 2017},
+   year = 2017,
+   month = July
+}
+```
+
