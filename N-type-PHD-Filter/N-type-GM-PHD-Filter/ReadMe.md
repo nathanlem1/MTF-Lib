@@ -1,5 +1,5 @@
 # N-type GM-PHD filter
-This is a simulation example for N-type GM-PHD filter where N = 4 which we call a Quad-GM-PHD filter. If you use this code, please cite the following paper:
+This is a simulation example for N-type GM-PHD filter where N = 4 which we call a Quad-GM-PHD filter. Control parameters are given in N_type_GM_PHD_Initialisation.m where you can set to use the saved simulation trajectories or generate your own, for example. Using the saved simulation trajectories, you can generate the figures included in the published given below. The file, OSPAandCardinalityQuadGMPHD.m, is also important in this case. If you use this code, please cite the following paper:
 
 
 ```
