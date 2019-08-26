@@ -1,4 +1,4 @@
-This is the GM-PHD-Filter implementations of the algorithm in [1] with the assumption of measurement-driven birth of targets which
+This is the GM-PHD-Filter implementations of the algorithm in [1] using both Matlab and Python with the assumption of measurement-driven birth of targets which
 has been used in work [2] for visual tracking application. In work [2], extracting states from the pruned intensity gives better result than extracting them from the updated intensity.
 
 ```
