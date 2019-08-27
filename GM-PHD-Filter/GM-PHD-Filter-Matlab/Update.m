@@ -46,7 +46,8 @@ for zi = 1:size(Z,2)
     
     for j = 1:numTargets_Jk_k_minus_1
         thisZ = Z(:,zi); % This consists of the observed position.
-        updatedIntensity.w{l*numTargets_Jk_k_minus_1+j} = model.p_D * predictedIntensity.w{j}*mvnpdf(thisZ,constructUpdateIntensity.eta{j},constructUpdateIntensity.S{j}); % Hoping normpdf is the function to be used!         
+        %updatedIntensity.w{l*numTargets_Jk_k_minus_1+j} = model.p_D * predictedIntensity.w{j}*mvnpdf(thisZ(1:2),constructUpdateIntensity.eta{j}(1:2),constructUpdateIntensity.S{j}(1:2,1:2)); % Hoping multivariate_normal.pdf is the right one to use; this is for video [x, y, w, h]
+        updatedIntensity.w{l*numTargets_Jk_k_minus_1+j} = model.p_D * predictedIntensity.w{j}*mvnpdf(thisZ,constructUpdateIntensity.eta{j},constructUpdateIntensity.S{j}); % Hoping multivariate_normal.pdf is the right one to use; this is for simulation [x, y]         
         updatedIntensity.m{l*numTargets_Jk_k_minus_1+j} = predictedIntensity.m{j} + constructUpdateIntensity.K{j}*(thisZ - constructUpdateIntensity.eta{j});
         updatedIntensity.p{l*numTargets_Jk_k_minus_1+j} = constructUpdateIntensity.p{j};
     end
