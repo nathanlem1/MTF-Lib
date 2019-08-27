@@ -160,7 +160,7 @@ class GM_PHD_Filter:
         l = 0
         for z in range(len(Z_k)):
             l = l + 1
-            for j in range(len(predictedIntensity['w'])):
+            for j in range(numTargets_Jk_k_minus_1):
                 z_k = copy.deepcopy(Z_k[z])
                 # w.append(self.model['p_D'] * predictedIntensity['w'][j] * mvnpdf(z_k[0:2], constructUpdateIntensity['eta'][j][0:2], constructUpdateIntensity['S'][j][0:2, 0:2]))  # Hoping multivariate_normal.pdf is the right one to use; this is for video [x, y, w, h]
                 w.append(self.model['p_D'] * predictedIntensity['w'][j] * mvnpdf(z_k, constructUpdateIntensity['eta'][j], constructUpdateIntensity['S'][j]))  # Hoping multivariate_normal.pdf is the right one to use; this is for simulation [x, y]
@@ -168,10 +168,10 @@ class GM_PHD_Filter:
                 P.append(constructUpdateIntensity['P'][j])
 
             total_w_d = 0.0
-            for j in range(len(predictedIntensity['w'])):
+            for j in range(numTargets_Jk_k_minus_1):
                 total_w_d += w[l*numTargets_Jk_k_minus_1 + j]
 
-            for j in range(len(predictedIntensity['w'])):
+            for j in range(numTargets_Jk_k_minus_1):
                 k_k = self.model['clutterIntensity']
                 w[l*numTargets_Jk_k_minus_1 + j] = w[l*numTargets_Jk_k_minus_1 + j] / (k_k + total_w_d) # Updated weight
 
