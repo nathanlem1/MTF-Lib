@@ -91,25 +91,25 @@ if simulateTargetStateAndMeasurement == 1
     simTarget16History = [simTarget16History, simTarget16State];
 else    
     % ====== Use already generated trajectories =========================
-    % load('simMeasurementHistory03.mat');
-%     load('simMeasurementHistory06.mat');
-    % load('simMeasurementHistory09.mat');
-    load('simTarget1History4.mat');
-    load('simTarget2History4.mat');
-    load('simTarget3History4.mat');
-    load('simTarget4History4.mat');
-    load('simTarget5History4.mat');
-    load('simTarget6History4.mat');
-    load('simTarget7History4.mat');
-    load('simTarget8History4.mat');
-    load('simTarget9History4.mat');
-    load('simTarget10History4.mat');
-    load('simTarget11History4.mat');
-    load('simTarget12History4.mat');
-    load('simTarget13History4.mat');
-    load('simTarget14History4.mat');
-    load('simTarget15History4.mat');
-    load('simTarget16History4.mat');
+    % load('simulatedData/simMeasurementHistory03.mat');
+%     load('simulatedData/simMeasurementHistory06.mat');
+    % load('simulatedData/simMeasurementHistory09.mat');
+    load('simulatedData/simTarget1History4.mat');
+    load('simulatedData/simTarget2History4.mat');
+    load('simulatedData/simTarget3History4.mat');
+    load('simulatedData/simTarget4History4.mat');
+    load('simulatedData/simTarget5History4.mat');
+    load('simulatedData/simTarget6History4.mat');
+    load('simulatedData/simTarget7History4.mat');
+    load('simulatedData/simTarget8History4.mat');
+    load('simulatedData/simTarget9History4.mat');
+    load('simulatedData/simTarget10History4.mat');
+    load('simulatedData/simTarget11History4.mat');
+    load('simulatedData/simTarget12History4.mat');
+    load('simulatedData/simTarget13History4.mat');
+    load('simulatedData/simTarget14History4.mat');
+    load('simulatedData/simTarget15History4.mat');
+    load('simulatedData/simTarget16History4.mat');
     
     if k >= 1 && k < simTargetEndTime1
         simTarget1State = simTarget1History(:,k+1);
@@ -430,4 +430,5 @@ simMeasurementHistory.Z3{k} =  Z3;
 simMeasurementHistory.Z4{k} =  Z4;
 
 %%
+
 
