@@ -11,33 +11,33 @@ clear;
 close all;
 
 % % Cardinality
-% load('CardinalityByStatesSizeQuad03.mat');
-% load('CardinalityByStatesSizeIndep03.mat');
-% load('CardinalityByWeightsQuad03.mat');
-% load('CardinalityByWeightsIndep03.mat');
-% load('CardinalityGT03.mat');
+% load('simulatedData/CardinalityByStatesSizeQuad03.mat');
+% load('simulatedData/CardinalityByStatesSizeIndep03.mat');
+% load('simulatedData/CardinalityByWeightsQuad03.mat');
+% load('simulatedData/CardinalityByWeightsIndep03.mat');
+% load('simulatedData/CardinalityGT03.mat');
 
-load('CardinalityByStatesSizeQuad06.mat');
-load('CardinalityByStatesSizeIndep06.mat');
-load('CardinalityByWeightsQuad06.mat');
-load('CardinalityByWeightsIndep06.mat');
-load('CardinalityGT06.mat');
+load('simulatedData/CardinalityByStatesSizeQuad06.mat');
+load('simulatedData/CardinalityByStatesSizeIndep06.mat');
+load('simulatedData/CardinalityByWeightsQuad06.mat');
+load('simulatedData/CardinalityByWeightsIndep06.mat');
+load('simulatedData/CardinalityGT06.mat');
 
-% load('CardinalityByStatesSizeQuad09.mat');
-% load('CardinalityByStatesSizeIndep09.mat');
-% load('CardinalityByWeightsQuad09.mat');
-% load('CardinalityByWeightsIndep09.mat');
-% load('CardinalityGT09.mat');
+% load('simulatedData/CardinalityByStatesSizeQuad09.mat');
+% load('simulatedData/CardinalityByStatesSizeIndep09.mat');
+% load('simulatedData/CardinalityByWeightsQuad09.mat');
+% load('simulatedData/CardinalityByWeightsIndep09.mat');
+% load('simulatedData/CardinalityGT09.mat');
 
 % OSPA metric
-% load('metric_historyQuad03.mat');
-% load('metric_historyIndep03.mat');
+% load('simulatedData/metric_historyQuad03.mat');
+% load('simulatedData/metric_historyIndep03.mat');
 
-load('metric_historyQuad06.mat');
-load('metric_historyIndep06.mat');
+load('simulatedData/metric_historyQuad06.mat');
+load('simulatedData/metric_historyIndep06.mat');
 
-% load('metric_historyQuad09.mat');
-% load('metric_historyIndep09.mat');
+% load('simulatedData/metric_historyQuad09.mat');
+% load('simulatedData/metric_historyIndep09.mat');
 
 cutoff_c = 100;
 
@@ -83,6 +83,9 @@ hleg1 = legend('OSPA error using quad-GM-PHD filter','OSPA error using 4 GM-PHD 
 hold off
         
 %%
+
+
+
 
 
 
