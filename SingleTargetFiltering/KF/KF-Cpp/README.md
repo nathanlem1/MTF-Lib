@@ -22,7 +22,7 @@ make
 
 ### Disply KF results
 It uses Python to display the ground truth and estimated positions after saving them in a file.
-After running the ./KF_demo above, use following to display its result.
+After running the ./KF_demo above, use the following to display its result.
 ```bash
 python3 KalmanFilter_display.py
 ```
