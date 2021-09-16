@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(Kalman_Filter)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)  # C++11
 
 find_package(Boost REQUIRED)
 #include_directories(${Boost_INCLUDE_DIR})
