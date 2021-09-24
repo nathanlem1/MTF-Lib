@@ -3,7 +3,8 @@
 #include <memory>
 
 
-const int KF_SIZE = 2;
+const int obs_dim = 2;   // Dimension of observation vector.
+const int state_dim = 4; // Dimension of state vector.
 
 class KalmanFilter 
 {
@@ -22,4 +23,3 @@ private:
 	class Impl;
 	std::unique_ptr<Impl> m_impl;
 };
-
