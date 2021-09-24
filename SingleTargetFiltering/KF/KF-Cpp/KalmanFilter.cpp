@@ -8,9 +8,9 @@ using boost::numeric::ublas::identity_matrix;
 using boost::numeric::ublas::matrix;
 
 
-const float INIT_Pk = 0.001;
-const float KF_INITIAL_VELOCITY_x = 0; 
-const float KF_INITIAL_VELOCITY_y = 0; 
+const float init_Pk = 0.001;
+const float initial_velocity_x = 0; 
+const float initial_velocity_y = 0; 
 
 const float sigma_v = 0.01;  // std of Q_k
 const float sigma_r = 0.1;   // std of H_k
@@ -18,27 +18,27 @@ const float sigma_r = 0.1;   // std of H_k
 class KalmanFilter::Impl
 {
 public:
-	explicit Impl(const float status[KF_SIZE]);
+	explicit Impl(const float status[obs_dim]);
 	const float* get_status();
 	const float* get_prediction();
-	bool update(const float status[KF_SIZE]);
+	bool update(const float status[obs_dim]);
 	bool predict();
 	bool skip();
 
 private:
-	matrix<float> Q_k = matrix<float>(KF_SIZE * 2, KF_SIZE * 2);  // process noise covariance
-	matrix<float> H_k = matrix<float>(KF_SIZE, KF_SIZE * 2);      // observation model
-	matrix<float> R_k = matrix<float>(KF_SIZE, KF_SIZE);          // observation noise covariance
-	matrix<float> F_k = matrix<float>(KF_SIZE * 2, KF_SIZE * 2);  // state transition model
+	matrix<float> Q_k = matrix<float>(state_dim, state_dim);  // process noise covariance
+	matrix<float> H_k = matrix<float>(obs_dim, state_dim);      // observation model
+	matrix<float> R_k = matrix<float>(obs_dim, obs_dim);          // observation noise covariance
+	matrix<float> F_k = matrix<float>(state_dim, state_dim);  // state transition model
 
-	matrix<float> x_k = matrix<float>(KF_SIZE * 2, 1);
-	matrix<float> x_k_pred = matrix<float>(KF_SIZE * 2, 1);
-	matrix<float> P_k = matrix<float>(KF_SIZE * 2, KF_SIZE * 2);
-	matrix<float> P_k_pred = matrix<float>(KF_SIZE * 2, KF_SIZE * 2);
+	matrix<float> x_k = matrix<float>(state_dim, 1);
+	matrix<float> x_k_pred = matrix<float>(state_dim, 1);
+	matrix<float> P_k = matrix<float>(state_dim, state_dim);
+	matrix<float> P_k_pred = matrix<float>(state_dim, state_dim);
 	
 	bool order2_inverse(const matrix<float>& in, matrix<float>& out)
 	{
-		if (in.size1() != KF_SIZE || in.size2() != KF_SIZE)
+		if (in.size1() != obs_dim || in.size2() != obs_dim)
 		{
 			return false;
 		}
@@ -57,19 +57,19 @@ private:
 		return true;
 	}
 
-	float m_status[KF_SIZE * 2];
+	float m_status[state_dim];
 };
 
-KalmanFilter::Impl::Impl(const float status[KF_SIZE])
+KalmanFilter::Impl::Impl(const float status[obs_dim])
 {
-	memcpy(m_status, status, sizeof(float) * KF_SIZE);
-	for (size_t i = KF_SIZE; i < KF_SIZE * 2; ++i)
+	memcpy(m_status, status, sizeof(float) * obs_dim);
+	for (size_t i = obs_dim; i < state_dim; ++i)
 	{
 		m_status[i] = 0.0f;
 	}
 
-	identity_matrix<float> tmp(KF_SIZE * 2);
-	identity_matrix<float> tmp_r(KF_SIZE);
+	identity_matrix<float> tmp(state_dim);
+	identity_matrix<float> tmp_r(obs_dim);
 
 	/*  F_k  =  1 0 1 0
 	 *          0 1 0 1
@@ -86,7 +86,7 @@ KalmanFilter::Impl::Impl(const float status[KF_SIZE])
 	 *          0 0 0 1
 	 */
 	
-	Q_k = pow(sigma_v,2) * tmp;
+	Q_k = pow(sigma_v, 2) * tmp;
 
 	/*   H_k = 1 0 0 0
 	 *         0 1 0 0
@@ -99,7 +99,7 @@ KalmanFilter::Impl::Impl(const float status[KF_SIZE])
 	 *         0 1
 	 */
 	R_k.clear();
-	R_k = pow(sigma_r,2) * tmp_r;
+	R_k = pow(sigma_r, 2) * tmp_r;
 
 	/*   H_k = 1 0 0 0
 	 *         0 1 0 0
@@ -112,13 +112,13 @@ KalmanFilter::Impl::Impl(const float status[KF_SIZE])
 	 */
 	x_k(0, 0) = status[0];
 	x_k(1, 0) = status[1];
-	x_k(2, 0) = KF_INITIAL_VELOCITY_x;
-	x_k(3, 0) = KF_INITIAL_VELOCITY_y;
+	x_k(2, 0) = initial_velocity_x;
+	x_k(3, 0) = initial_velocity_y;
 
 
-	/* P_k = I * INIT_Pk
+	/* P_k = I * init_Pk
 	 */
-	P_k = tmp * INIT_Pk;
+	P_k = tmp * init_Pk;
 
 
 	x_k_pred = x_k;
@@ -127,7 +127,7 @@ KalmanFilter::Impl::Impl(const float status[KF_SIZE])
 
 const float* KalmanFilter::Impl::get_status()
 {
-	for (size_t i = 0; i < KF_SIZE * 2; ++i)
+	for (size_t i = 0; i < state_dim; ++i)
 	{
 		m_status[i] = x_k(i, 0);
 	}
@@ -136,16 +136,16 @@ const float* KalmanFilter::Impl::get_status()
 
 const float* KalmanFilter::Impl::get_prediction()
 {
-	for (size_t i = 0; i < KF_SIZE * 2; ++i)
+	for (size_t i = 0; i < state_dim; ++i)
 	{
 		m_status[i] = x_k_pred(i, 0);
 	}
 	return m_status;
 }
 
-bool KalmanFilter::Impl::update(const float status[KF_SIZE])
+bool KalmanFilter::Impl::update(const float status[obs_dim])
 {
-	matrix<float> y_k(KF_SIZE, 1);  // Build y_k as same size of z_p
+	matrix<float> y_k(obs_dim, 1);  // Build y_k as same size of z_p
 	y_k(0, 0) = status[0];
 	y_k(1, 0) = status[1];
 	y_k -= prod(H_k, x_k_pred);
@@ -194,7 +194,7 @@ bool KalmanFilter::Impl::skip()
 	return true;
 }
 
-KalmanFilter::KalmanFilter(const float status[KF_SIZE]) : m_impl(new Impl(status))
+KalmanFilter::KalmanFilter(const float status[obs_dim]) : m_impl(new Impl(status))
 {
 }
 
@@ -210,7 +210,7 @@ const float* KalmanFilter::get_prediction()
 	return m_impl->get_prediction();
 }
 
-bool KalmanFilter::update(const float status[KF_SIZE])
+bool KalmanFilter::update(const float status[obs_dim])
 {
 	return m_impl->update(status);
 }
@@ -223,4 +223,5 @@ bool KalmanFilter::skip()
 {
 	return m_impl->skip();
 }
+
 
