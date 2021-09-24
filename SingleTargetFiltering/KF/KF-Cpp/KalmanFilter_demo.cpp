@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+// int main (int argc, char **argv)   // the same
 int main(int argc, char *argv[])
 {
 	float ob_noise = 20.0f;
