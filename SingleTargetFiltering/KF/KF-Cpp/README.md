@@ -3,7 +3,7 @@
  introductory paper:
      http://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf
 
-It predicts an object's location in 2D space i.e. tt takes positions (xy coordinates) 
+It predicts an object's location in 2D space i.e. it takes positions (xy coordinates) 
 as input and returns estimated positions and speed (xy coordinates and v_x v_y speed). 
 It uses a constant velocity (CV) motion model. 
 
