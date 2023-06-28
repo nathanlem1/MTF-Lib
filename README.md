@@ -11,3 +11,5 @@ I am planning to prepare multi-target filtering Tools (library) which include ma
 Different implementation schemes such as Kalman filter (KF), extended Kalman filter (EKF), uncented Kalman filter (UKF) and  sequential Monte Carlo (SMC) or particle filter (PF) of these multi-target filtering algorithms will be included.  
 
 Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF will also be included. Particularly, KF is implemented in both Matlab and Python.
+
+It is also worth looking at the following links for some related information on https://github.com/USNavalResearchLaboratory/TrackerComponentLibrary and https://github.com/chisyliu/Sensor-Fusion-and-Nonlinear-Filtering-SSY345.
