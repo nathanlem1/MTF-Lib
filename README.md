@@ -12,4 +12,4 @@ Different implementation schemes such as Kalman filter (KF), extended Kalman fil
 
 Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF will also be included. Particularly, KF is implemented in both Matlab and Python.
 
-It is also worth looking at the following links for some related information on https://github.com/USNavalResearchLaboratory/TrackerComponentLibrary and https://github.com/chisyliu/Sensor-Fusion-and-Nonlinear-Filtering-SSY345.
+It is also worth looking at the following links for some related information on https://github.com/USNavalResearchLaboratory/TrackerComponentLibrary, https://github.com/chisyliu/Sensor-Fusion-and-Nonlinear-Filtering-SSY345 and https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python.
