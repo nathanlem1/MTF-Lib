@@ -17,7 +17,7 @@ mkdir build
 cd build
 cmake ..
 make
-./KF_demo
+./KalmanFilter_demo
 ```
 
 ### Disply KF results
