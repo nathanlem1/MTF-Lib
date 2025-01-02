@@ -8,6 +8,6 @@ This repository contains resources for multiple target filtering (MTF). It inclu
 
 Different implementation schemes such as Kalman filter (KF), extended Kalman filter (EKF), uncented Kalman filter (UKF) and  sequential Monte Carlo (SMC) or particle filter (PF) of these multi-target filtering algorithms are included.  
 
-Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF are also included. Particularly, KF is implemented in both Matlab and Python.
+Single target filtering in different implementation schemes for a quick start such as KF, EKF, UKF and  PF are also included. Particularly, KF is implemented in [Matlab](https://github.com/nathanlem1/MTF-Lib/tree/master/SingleTargetFiltering/KF/KF-Matlab), [Python](https://github.com/nathanlem1/MTF-Lib/tree/master/SingleTargetFiltering/KF/KF-Python) and [C++](https://github.com/nathanlem1/MTF-Lib/tree/master/SingleTargetFiltering/KF/KF-Cpp).
 
 It is also worth looking at the following links for some related information on https://github.com/USNavalResearchLaboratory/TrackerComponentLibrary, https://github.com/chisyliu/Sensor-Fusion-and-Nonlinear-Filtering-SSY345 and https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python.
